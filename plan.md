@@ -146,14 +146,14 @@ gantt
 
 👉 **Bàn giao ban đầu**: Nguyễn Công Duẩn (TV1) khởi tạo repo, chuẩn bị môi trường Docker Qdrant, đưa 50 answers RAG đã sinh sẵn (`artifacts/answers_50q.json`) cho cả nhóm.
 
-🟢 **Checkpoint 0 (0 - 15m): Kiểm Tra Sẵn Sàng & Khởi Tạo Nhánh Độc Quyền**
+🟢 **Checkpoint 0 (0 - 15m): Kiểm Tra Sẵn Sàng & Khởi Tạo Nhánh Độc Quyền [✅ ĐÃ HOÀN THÀNH 100%]**
 - 👤 **Nguyễn Công Duẩn (TV1 - BẠN - Nửa đầu)**: Khởi tạo repo `K4-L3-DAY24-TenNhom-Eval-Guard`, chép 5 module Day 18 (`m1`–`m5`) vào `src/`. Khởi động Docker Qdrant (`docker compose -f infra/docker-compose.yml up -d`), chạy `python scripts/setup_answers.py --live` sinh ra `artifacts/answers_50q.json` (đủ 20 factual, 20 multi_hop, 10 adversarial). Push lên nhánh `main`.
 - 👤 **Phùng Quốc Việt (TV2) & Phan Hoàng Vũ (TV3) (Nửa sau)**: Clone repo về máy, kiểm tra môi trường `.venv` (Python 3.11), chạy unit test scaffold `python -m pytest tests/ -m support -q`. Tạo branch độc lập: Việt tạo `feature/phase-b-judge`, Vũ tạo `feature/phase-c-guard`.
 - 👉 **Bàn giao**: Duẩn đưa `answers_50q.json` chuẩn và test scaffold passed cho Việt & Vũ bắt đầu triển khai song song.
 
-🟢 **Checkpoint 1 (15 - 45m): Phase A — RAGAS Production Evaluation & Phân Tích Lỗi Bottom 10**
-- 👤 **Nguyễn Công Duẩn (TV1 - BẠN - Nửa đầu)**: Viết `src/phase_a_ragas.py`: hoàn thiện Task 1 (`group_by_distribution`), Task 2 (`run_ragas_50q` - gọi `m4_eval.evaluate_ragas`, trả về `RagasEvaluation` chứa metadata `evaluator_models`), Task 3 (`bottom_10` - lọc 10 câu yếu nhất, gán `DIAGNOSTIC_TREE`), Task 4 (`cluster_analysis` - matrix $4 \times 3$, chọn dominant failure bằng mean thấp nhất). Chạy test offline: `python -m pytest tests/test_phase_a.py -q`.
-- 👤 **Nguyễn Công Duẩn (TV1 - BẠN - Nửa sau)**: Chạy thực nghiệm live: `python scripts/run_experiments.py --phase a --live` sinh ra `artifacts/ragas_50q.json`. Viết báo cáo `doc/reports/failure_clusters.md`: phân tích chuyên sâu các bẫy adversarial (version conflict giữa policy cũ/mới, phủ định) để giật **+4 điểm bonus**.
+🟢 **Checkpoint 1 (15 - 45m): Phase A — RAGAS Production Evaluation & Phân Tích Lỗi Bottom 10 [✅ ĐÃ HOÀN THÀNH 100%]**
+- 👤 **Nguyễn Công Duẩn (TV1 - BẠN - Nửa đầu)**: Viết `src/phase_a_ragas.py`: hoàn thiện Task 1 (`group_by_distribution`), Task 2 (`run_ragas_50q` - gọi `m4_eval.evaluate_ragas`, trả về `RagasEvaluation` chứa metadata `evaluator_models`), Task 3 (`bottom_10` - lọc 10 câu yếu nhất, gán `DIAGNOSTIC_TREE`), Task 4 (`cluster_analysis` - matrix $4 \times 3$, chọn dominant failure bằng mean thấp nhất). Chạy test offline: `python -m pytest tests/test_phase_a.py -q` (6/6 tests PASS).
+- 👤 **Nguyễn Công Duẩn (TV1 - BẠN - Nửa sau)**: Chạy thực nghiệm live: `python scripts/run_experiments.py --phase a --live` sinh ra `artifacts/ragas_50q.json`. Viết báo cáo `doc/reports/failure_clusters.md`: phân tích chuyên sâu các bẫy adversarial (version conflict giữa policy cũ/mới, phủ định), đạt điều kiện săn **+4 điểm bonus**. Đã commit và push nhánh `feature/phase-a-ragas`.
 - 👤 **Phùng Quốc Việt & Phan Hoàng Vũ (Song song)**: Việt chuẩn bị prompt pairwise cho Phase B; Vũ kiểm tra Presidio recognizers và NeMo rails cho Phase C.
 - 👉 **Bàn giao**: Duẩn đưa `artifacts/ragas_50q.json` và báo cáo lỗi `failure_clusters.md` cho cả nhóm.
 
