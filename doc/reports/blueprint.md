@@ -1,6 +1,6 @@
 # Blueprint CI/CD cho RAG và guardrails
 
-Nhóm: Nhóm 1 - AITC K4
+Nhóm: Soul
 
 Người phụ trách: Phan Hoàng Vũ (MSSV: 2A202602450)
 

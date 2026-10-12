@@ -1,8 +1,8 @@
 # Đánh giá LLM Judge Phase B
 
-Nhóm: Nhóm 1 - AITC K4
+Nhóm: Soul
 
-Người phụ trách: Phùng Quốc Việt (MSSV: K4-PQV-02)
+Người phụ trách: Phùng Quốc Việt (MSSV: 2A202602456)
 
 Nguồn: `artifacts/judge_results.json`; run timestamp: 2026-10-12T14:35:05.300086+00:00.
 Models generation/judge: generation: gpt-4o-mini-2024-07-18; judge: gpt-4o-mini.

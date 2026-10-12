@@ -1,8 +1,8 @@
 # Phân tích lỗi Phase A
 
-Nhóm: Nhóm 1 - AITC K4
+Nhóm: Soul
 
-Người phụ trách: Nguyễn Công Duẩn (MSSV: K4-NCD-01) - Trưởng nhóm
+Người phụ trách: Nguyễn Công Duẩn (MSSV: 2A202602716) - Trưởng nhóm
 
 Nguồn: `artifacts/ragas_50q.json`; run timestamp: 2026-10-12T07:34:36.114455+00:00.
 Generation mode/fallback và điều kiện chạy: Thực nghiệm live trên 50 câu hỏi từ `fixtures/test_set_50q.json`, vector store Qdrant container v1.9.7 (port 6333), embedding BAAI/bge-m3, reranker BAAI/bge-reranker-v2-m3, generation mode LLM gpt-4o-mini-2024-07-18 không fallback.
