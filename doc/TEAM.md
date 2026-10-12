@@ -4,11 +4,11 @@ Tên nhóm: Soul
 
 Repo chung: https://github.com/duanhap/K4-Track-3A-Day24-Eval-Guard
 
-Trưởng nhóm/người nộp: Nguyễn Công Duẩn (MSSV: K4-NCD-01)
+Trưởng nhóm/người nộp: Nguyễn Công Duẩn (MSSV: 2A202602716)
 
 Ngày lab/deadline áp dụng: 2026-10-12 23:59:00 — Asia/Ho_Chi_Minh (UTC+07:00)
 
-Commit dùng để chấm: e8df85b
+Commit dùng để chấm: 9593335
 
 Mỗi nhóm nộp một repo. Điền đủ thành viên và một mục INDIVIDUAL cho từng người.
 Thêm/xóa rows để khớp nhóm thật; mẫu ba rows không ép nhóm phải có ba người.
@@ -17,7 +17,7 @@ Thêm/xóa rows để khớp nhóm thật; mẫu ba rows không ép nhóm phải
 
 | STT | Họ và tên | MSSV | Vai trò / công việc thật | Bằng chứng |
 |---|---|---|---|---|
-| 1 | Nguyễn Công Duẩn | 2A202602716 | Trưởng nhóm, Khởi tạo Repo, Setup CP0, Phase A RAGAS 4 metrics, Báo cáo lỗi | Commit 1a5265b, 90ebd59, 8197290, artifacts/ragas_50q.json, failure_clusters.md |
+| 1 | Nguyễn Công Duẩn | 2A202602716 | Trưởng nhóm, Khởi tạo Repo, Setup CP0, Phase A RAGAS 4 metrics, Báo cáo lỗi | Commit 1a5265b, 90ebd59, 8197290, artifacts/ragas_50q.json, failure_clusters.md, doc/individual/duan_individual.md |
 | 2 | Phùng Quốc Việt | 2A202602456 | Phụ trách Phase B (LLM-as-a-Judge, Swap-and-Average, Cohen's kappa, bias report) | Nhánh feature/phase-b-judge, artifacts/judge_results.json, bias_report.md, doc/individual/viet_individual.md |
 | 3 | Phan Hoàng Vũ | 2A202602450 | Phụ trách Phase C (Presidio PII, NeMo Rails, Latency P95), Task 13 Blueprint | Nhánh feature/phase-c-guard, artifacts/guard_results.json, blueprint.md, doc/individual/vu_individual.md |
 
@@ -34,7 +34,7 @@ Models/Qdrant/50 answers đã chuẩn bị: Docker Qdrant v1.9.7 (port 6333), em
 ### NguyenCongDuan-2A202602716
 
 - Phần được giao và phần thực tế đã làm: Trưởng nhóm điều phối, khởi tạo repo chung, thiết lập Docker Qdrant và sinh 50 câu trả lời RAG. Thực hiện Phase A trong `src/phase_a_ragas.py` (Tasks 1-4) và viết báo cáo phân tích lỗi `doc/reports/failure_clusters.md`.
-- Bằng chứng: Commit 1a5265b, 90ebd59, 8197290, artifact `artifacts/ragas_50q.json` và báo cáo `failure_clusters.md`.
+- Bằng chứng: Commit 1a5265b, 90ebd59, 8197290, artifact `artifacts/ragas_50q.json`, báo cáo `failure_clusters.md` và `doc/individual/duan_individual.md`.
 - Cách kiểm tra: Unit tests mock `python -m pytest tests/test_phase_a.py -q` (6/6 passed), live runner `python scripts/run_experiments.py --phase a --live`.
 - Điều đã học: Hiểu sâu về 4 metric RAGAS, nhận diện được bẫy version conflict giữa các phiên bản chính sách cũ và mới khiến RAG suy giảm tính trung thực (faithfulness).
 - Giới hạn/cách xử lý: Mô hình embedding dense vector dễ bị thu hút bởi từ khóa trong chính sách cũ; đã đề xuất giải pháp lọc metadata active/effective_date ở tầng retrieval.
