@@ -17,8 +17,8 @@ Thêm/xóa rows để khớp nhóm thật; mẫu ba rows không ép nhóm phải
 
 | STT | Họ và tên | MSSV | Vai trò / công việc thật | Bằng chứng |
 |---|---|---|---|---|
-| 1 | Nguyễn Công Duẩn | K4-NCD-01 | Trưởng nhóm, Khởi tạo Repo, Setup CP0, Phase A RAGAS 4 metrics, Báo cáo lỗi | Commit 1a5265b, 90ebd59, 8197290, artifacts/ragas_50q.json, failure_clusters.md |
-| 2 | Phùng Quốc Việt | K4-PQV-02 | Phụ trách Phase B (LLM-as-a-Judge, Swap-and-Average, Cohen's kappa, bias report) | Nhánh feature/phase-b-judge, artifacts/judge_results.json, bias_report.md, doc/individual/viet_individual.md |
+| 1 | Nguyễn Công Duẩn | 2A202602716 | Trưởng nhóm, Khởi tạo Repo, Setup CP0, Phase A RAGAS 4 metrics, Báo cáo lỗi | Commit 1a5265b, 90ebd59, 8197290, artifacts/ragas_50q.json, failure_clusters.md |
+| 2 | Phùng Quốc Việt | 2A202602456 | Phụ trách Phase B (LLM-as-a-Judge, Swap-and-Average, Cohen's kappa, bias report) | Nhánh feature/phase-b-judge, artifacts/judge_results.json, bias_report.md, doc/individual/viet_individual.md |
 | 3 | Phan Hoàng Vũ | 2A202602450 | Phụ trách Phase C (Presidio PII, NeMo Rails, Latency P95), Task 13 Blueprint | Nhánh feature/phase-c-guard, artifacts/guard_results.json, blueprint.md, doc/individual/vu_individual.md |
 
 Người tích hợp/chạy batch/nộp link: Nguyễn Công Duẩn (Trưởng nhóm).
@@ -31,7 +31,7 @@ Models/Qdrant/50 answers đã chuẩn bị: Docker Qdrant v1.9.7 (port 6333), em
 
 ## INDIVIDUAL
 
-### NguyenCongDuan-K4-NCD-01
+### NguyenCongDuan-2A202602716
 
 - Phần được giao và phần thực tế đã làm: Trưởng nhóm điều phối, khởi tạo repo chung, thiết lập Docker Qdrant và sinh 50 câu trả lời RAG. Thực hiện Phase A trong `src/phase_a_ragas.py` (Tasks 1-4) và viết báo cáo phân tích lỗi `doc/reports/failure_clusters.md`.
 - Bằng chứng: Commit 1a5265b, 90ebd59, 8197290, artifact `artifacts/ragas_50q.json` và báo cáo `failure_clusters.md`.
@@ -40,7 +40,7 @@ Models/Qdrant/50 answers đã chuẩn bị: Docker Qdrant v1.9.7 (port 6333), em
 - Giới hạn/cách xử lý: Mô hình embedding dense vector dễ bị thu hút bởi từ khóa trong chính sách cũ; đã đề xuất giải pháp lọc metadata active/effective_date ở tầng retrieval.
 - Nguồn/AI hỗ trợ nếu có: Tham khảo tài liệu RAGAS và sử dụng AI hỗ trợ phân tích ma trận lỗi theo cây chẩn đoán DIAGNOSTIC_TREE.
 
-### PhungQuocViet-K4-PQV-02
+### PhungQuocViet-2A202602456
 
 - Phần được giao và phần thực tế đã làm: Trực tiếp phụ trách độc quyền Phase B (LLM-as-a-Judge): Thiết kế prompt so sánh pairwise A/B theo chuẩn JSON, lập trình thuật toán Swap-and-Average để triệt tiêu Position Bias, tính toán hệ số Cohen's kappa đối chiếu với 10 nhãn người thật và hoàn thiện báo cáo kỹ thuật đo lường thiên lệch trong `doc/reports/bias_report.md`.
 - Bằng chứng: Nhánh Git `feature/phase-b-judge` (commit `3a71ea4` mang tên Phung Quoc Viet), mã nguồn `src/phase_b_judge.py`, artifact `artifacts/judge_results.json` (Cohen's $\kappa = 1.000$ đạt +3 điểm bonus Phase B, position bias rate 40.0%), báo cáo kỹ thuật `doc/reports/bias_report.md` và nhật ký cá nhân `doc/individual/viet_individual.md`.
