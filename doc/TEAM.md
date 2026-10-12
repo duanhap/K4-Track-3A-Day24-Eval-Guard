@@ -18,7 +18,7 @@ Thêm/xóa rows để khớp nhóm thật; mẫu ba rows không ép nhóm phải
 | STT | Họ và tên | MSSV | Vai trò / công việc thật | Bằng chứng |
 |---|---|---|---|---|
 | 1 | Nguyễn Công Duẩn | K4-NCD-01 | Trưởng nhóm, Khởi tạo Repo, Setup CP0, Phase A RAGAS 4 metrics, Báo cáo lỗi | Commit 1a5265b, 90ebd59, 8197290, artifacts/ragas_50q.json, failure_clusters.md |
-| 2 | Phùng Quốc Việt | K4-PQV-02 | Phụ trách Phase B (LLM-as-a-Judge, Swap-and-Average, Cohen's kappa, bias report) | Đang thực hiện trên nhánh feature/phase-b-judge |
+| 2 | Phùng Quốc Việt | K4-PQV-02 | Phụ trách Phase B (LLM-as-a-Judge, Swap-and-Average, Cohen's kappa, bias report) | Nhánh feature/phase-b-judge, artifacts/judge_results.json, bias_report.md, doc/individual/viet_individual.md |
 | 3 | Phan Hoàng Vũ | 2A202602450 | Phụ trách Phase C (Presidio PII, NeMo Rails, Latency P95), Task 13 Blueprint | Nhánh feature/phase-c-guard, artifacts/guard_results.json, blueprint.md, doc/individual/vu_individual.md |
 
 Người tích hợp/chạy batch/nộp link: Nguyễn Công Duẩn (Trưởng nhóm).
@@ -43,7 +43,7 @@ Models/Qdrant/50 answers đã chuẩn bị: Docker Qdrant v1.9.7 (port 6333), em
 ### PhungQuocViet-K4-PQV-02
 
 - Phần được giao và phần thực tế đã làm: Phụ trách toàn bộ Phase B (LLM-as-a-Judge): Thiết kế prompt so sánh pairwise A/B, triển khai kỹ thuật Swap-and-Average để triệt tiêu Position Bias, tính toán hệ số Cohen's kappa đối chiếu với nhãn người và viết báo cáo đo lường bias trong `doc/reports/bias_report.md`.
-- Bằng chứng: Đang triển khai trên nhánh `feature/phase-b-judge`.
+- Bằng chứng: Nhánh `feature/phase-b-judge`, artifact `artifacts/judge_results.json` (Cohen's $\kappa = 1.000$ đạt +3 bonus Phase B, position bias 40%), báo cáo `doc/reports/bias_report.md` và `doc/individual/viet_individual.md`.
 - Cách kiểm tra: Unit tests `pytest tests/test_phase_b.py -q` và live runner `python scripts/run_experiments.py --phase b --live`.
 - Điều đã học: Bản chất Position Bias và Verbosity Bias trong LLM Judge và nguyên lý Swap-and-Average.
 - Giới hạn/cách xử lý: Cần đối chiếu sát sao với tập 10 nhãn `human_labels_10q.json` để kiểm chuẩn độ tin cậy.
