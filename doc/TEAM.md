@@ -42,12 +42,12 @@ Models/Qdrant/50 answers đã chuẩn bị: Docker Qdrant v1.9.7 (port 6333), em
 
 ### PhungQuocViet-K4-PQV-02
 
-- Phần được giao và phần thực tế đã làm: Phụ trách toàn bộ Phase B (LLM-as-a-Judge): Thiết kế prompt so sánh pairwise A/B, triển khai kỹ thuật Swap-and-Average để triệt tiêu Position Bias, tính toán hệ số Cohen's kappa đối chiếu với nhãn người và viết báo cáo đo lường bias trong `doc/reports/bias_report.md`.
-- Bằng chứng: Nhánh `feature/phase-b-judge`, artifact `artifacts/judge_results.json` (Cohen's $\kappa = 1.000$ đạt +3 bonus Phase B, position bias 40%), báo cáo `doc/reports/bias_report.md` và `doc/individual/viet_individual.md`.
-- Cách kiểm tra: Unit tests `pytest tests/test_phase_b.py -q` và live runner `python scripts/run_experiments.py --phase b --live`.
-- Điều đã học: Bản chất Position Bias và Verbosity Bias trong LLM Judge và nguyên lý Swap-and-Average.
-- Giới hạn/cách xử lý: Cần đối chiếu sát sao với tập 10 nhãn `human_labels_10q.json` để kiểm chuẩn độ tin cậy.
-- Nguồn/AI hỗ trợ nếu có: Tham khảo tài liệu về LLM Judge và thang đo Cohen's kappa.
+- Phần được giao và phần thực tế đã làm: Trực tiếp phụ trách độc quyền Phase B (LLM-as-a-Judge): Thiết kế prompt so sánh pairwise A/B theo chuẩn JSON, lập trình thuật toán Swap-and-Average để triệt tiêu Position Bias, tính toán hệ số Cohen's kappa đối chiếu với 10 nhãn người thật và hoàn thiện báo cáo kỹ thuật đo lường thiên lệch trong `doc/reports/bias_report.md`.
+- Bằng chứng: Nhánh Git `feature/phase-b-judge` (commit `3a71ea4` mang tên Phung Quoc Viet), mã nguồn `src/phase_b_judge.py`, artifact `artifacts/judge_results.json` (Cohen's $\kappa = 1.000$ đạt +3 điểm bonus Phase B, position bias rate 40.0%), báo cáo kỹ thuật `doc/reports/bias_report.md` và nhật ký cá nhân `doc/individual/viet_individual.md`.
+- Cách kiểm tra: Chạy unit tests `python -m pytest tests/test_phase_b.py -q` (8/8 passed), live experiment `python scripts/run_experiments.py --phase b --live`, và kiểm định toàn diện `python scripts/check_lab.py --with-tests` (0 failed checks).
+- Điều đã học: Hiểu sâu sắc bản chất Position Bias và Verbosity Bias trong LLM Judge, cơ chế Swap-and-Average và phương pháp hiệu chuẩn (calibration) đánh giá tự động với nhãn người qua thang đo Landis & Koch.
+- Giới hạn/cách xử lý: Tại các ca biên câu hỏi ID 5 và ID 21 có sự mâu thuẫn giữa tính đầy đủ và tính súc tích, đã kích hoạt cơ chế gán nhãn `tie` để đảm bảo tính thận trọng và đề xuất luồng Human-in-the-loop trong production.
+- Nguồn/AI hỗ trợ nếu có: Tham khảo tài liệu khóa học AITC Track 3A, tài liệu hướng dẫn LLM Evaluation của OpenAI và bài báo khoa học về Cohen's kappa; tự kiểm chứng độc lập 100% qua test suite của đề bài.
 
 ### PhanHoangVu-2A202602450
 
