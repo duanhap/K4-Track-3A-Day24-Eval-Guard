@@ -11,7 +11,7 @@
   - **Soạn thảo báo cáo kỹ thuật Phase B**: Tôi đã trực tiếp phân tích số liệu thực nghiệm và hoàn thiện toàn bộ báo cáo phân tích thiên lệch tại `doc/reports/bias_report.md`.
 
 - **Bằng chứng**:
-  - Nhánh Git độc quyền: `feature/phase-b-judge` với commit `3a71ea4` mang tên tác giả Phung Quoc Viet (đã merge sạch sẽ vào nhánh `main`).
+  - Nhánh Git độc quyền: `feature/phase-b-judge` với commit `3a71ea4`
   - Mã nguồn đã hoàn thiện sạch sẽ mọi TODO: `src/phase_b_judge.py`.
   - Artifact thực nghiệm live: `artifacts/judge_results.json` với hệ số Cohen's $\kappa = 1.000$ (đạt tối đa **+3 điểm bonus Phase B**), Position Bias phát hiện là 40.0% (2/5 cặp).
   - Báo cáo phân tích chuyên sâu: `doc/reports/bias_report.md` đã điền đầy đủ mọi bảng biểu, số liệu thực nghiệm và nhận định chuyên môn, đạt chuẩn thẩm định không còn placeholder.
