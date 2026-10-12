@@ -1,6 +1,6 @@
 # BÁO CÁO ĐÓNG GÓP CÁ NHÂN (INDIVIDUAL REPORT)
 
-### NguyenCongDuan-K4-NCD-01
+### NguyenCongDuan-2A202602716
 
 - **Phần được giao và phần thực tế đã làm**:
   - **Trưởng nhóm & Khởi tạo hạ tầng (CP0)**: Tạo repo GitHub nhóm, add Phùng Quốc Việt và Phan Hoàng Vũ làm Collaborators. Chép 5 module RAG từ Day 18 (`m1_chunking.py`, `m2_search.py`, `m3_rerank.py`, `m4_eval.py`, `m5_enrichment.py`) vào `src/`. Khởi động Docker Qdrant v1.9.7 (port 6333), chạy `python scripts/setup_answers.py --live` sinh ra `artifacts/answers_50q.json` với đầy đủ 50 câu trả lời RAG (20 factual, 20 multi_hop, 10 adversarial). Push commit khởi tạo lên `main` làm baseline cho cả nhóm.
@@ -14,7 +14,6 @@
 - **Bằng chứng**:
   - Commit `1a5265b` — CP0: khởi tạo repo, module Day 18 m1–m5, `artifacts/answers_50q.json`.
   - Commit `90ebd59` — CP1: `src/phase_a_ragas.py` hoàn chỉnh không còn TODO, `artifacts/ragas_50q.json`, `doc/reports/failure_clusters.md`.
-  - Commit `8197290` — cập nhật `plan.md` đánh dấu CP0 và CP1 hoàn thành.
   - Artifact `artifacts/ragas_50q.json`: faithfulness factual 0.9150, mean adversarial 0.6369 < factual 0.8667 (đáp ứng điều kiện bonus Phase A).
   - Báo cáo `doc/reports/failure_clusters.md`: phân tích 3 dạng bẫy adversarial, matrix 4×3, dominant failure = `adversarial` (mean = 0.6369).
 
