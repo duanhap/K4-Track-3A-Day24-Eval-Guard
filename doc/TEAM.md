@@ -1,6 +1,6 @@
 # Nhóm thực hiện K4 Track 3A
 
-Tên nhóm: Nhóm 1 - AITC K4
+Tên nhóm: Soul
 
 Repo chung: https://github.com/duanhap/K4-Track-3A-Day24-Eval-Guard
 
